@@ -108,7 +108,7 @@ def main():
     
     print("Step 1: Training the linear regression model...")
     weights = train_linear_regression(X_with_bias, y, learning_rate, epochs)
-    print("Trained weights (should be close to [c, m]):", weights)
+    print(f"Trained weights (should be close to [{c}, {m}]):", weights)
     
     print("Step 2: Making predictions...")
     predictions = predict(X_with_bias, weights)
