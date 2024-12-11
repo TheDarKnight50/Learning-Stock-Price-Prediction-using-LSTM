@@ -19,26 +19,26 @@ def process_csv(file_path):
 if __name__ == "__main__":
     # Sample CSV data for testing (20 cities)
     csv_data = """City,Temperature,Rainfall
-    CityA,25,12.5
-    CityB,35,15.0
-    CityC,40,10.0
-    CityD,20,8.0
-    CityE,31,18.0
-    CityF,28,5.0
-    CityG,45,22.0
-    CityH,30,13.0
-    CityI,50,20.0
-    CityJ,15,9.0
-    CityK,32,14.0
-    CityL,38,19.0
-    CityM,26,6.0
-    CityN,29,7.5
-    CityO,41,11.0
-    CityP,33,12.0
-    CityQ,42,16.0
-    CityR,27,10.5
-    CityS,36,8.0
-    CityT,25,9.0
+CityA,25,12.5
+CityB,35,15.0
+CityC,40,10.0
+CityD,20,8.0
+CityE,31,18.0
+CityF,28,5.0
+CityG,45,22.0
+CityH,30,13.0
+CityI,50,20.0
+CityJ,15,9.0
+CityK,32,14.0
+CityL,38,19.0
+CityM,26,6.0
+CityN,29,7.5
+CityO,41,11.0
+CityP,33,12.0
+CityQ,42,16.0
+CityR,27,10.5
+CityS,36,8.0
+CityT,25,9.0
     """
     
     # Write the sample data to a test CSV file
