@@ -9,7 +9,16 @@ def matrix_operations(A, B):
     
     Returns a tuple: (sum_matrix, product_matrix, transpose_A)
     """
-    pass  # TODO: Implement this function
+    # Matrix addition
+    sum_matrix = A + B
+
+    # Matrix multiplication
+    product_matrix = np.dot(A, B)
+
+    # Transpose of A
+    transpose_A = np.transpose(A)
+
+    return sum_matrix, product_matrix, transpose_A
 
 # Main function for evaluation
 if __name__ == "__main__":

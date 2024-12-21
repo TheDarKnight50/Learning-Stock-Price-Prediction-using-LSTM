@@ -11,7 +11,38 @@ def analyze_and_plot_student_data():
     Returns:
     - DataFrame with student data including average marks.
     """
-    pass  # TODO: Implement this function
+    # Test data for 20 students
+    student_data = {
+        "Name": [
+            "Alice", "Bob", "Charlie", "Diana", "Eve", "Frank", "Grace", "Hank", "Ivy", "Jack",
+            "Ken", "Lily", "Mike", "Nina", "Oscar", "Paul", "Quincy", "Rita", "Sam", "Tina"
+        ],
+        "Math": [
+            85, 90, 78, 88, 92, 79, 84, 93, 81, 76, 
+            95, 88, 84, 87, 90, 82, 91, 77, 85, 89
+        ],
+        "Science": [
+            80, 89, 84, 91, 85, 92, 78, 88, 85, 81, 
+            90, 87, 89, 91, 93, 86, 85, 88, 90, 84
+        ]
+    }
+
+    # Note : this function works even without writing the above code, as the student_data is already defined in the global scope.
+
+    # Create DataFrame from the test data
+    student_df = pd.DataFrame(student_data)
+
+    # Calculate average marks for each student
+    student_df["Average"] = student_df[["Math", "Science"]].mean(axis=1)
+
+    # Plot bar chart showing marks in Math and Science for each student
+    student_df.plot(x="Name", y=["Math", "Science"], kind="bar", figsize=(12, 6))
+    plt.title("Student Marks in Math and Science")
+    plt.xlabel("Student Name")
+    plt.ylabel("Marks")
+    plt.show()
+
+    return student_df
 
 # Main function for evaluation
 if __name__ == "__main__":

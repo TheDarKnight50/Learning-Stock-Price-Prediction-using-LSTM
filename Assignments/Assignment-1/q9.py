@@ -7,7 +7,18 @@ def plot_pie_chart():
        Apples: 30, Bananas: 20, Oranges: 50.
     2. Add labels to each section.
     """
-    pass  # TODO: Implement this function
+    # Data for the pie chart
+    sizes = [30, 20, 50]
+    labels = ['Apples', 'Bananas', 'Oranges']
+
+    # Plot the pie chart
+    plt.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=90)
+    
+    # Add a title to the pie chart
+    plt.title("Fruit Distribution in a Basket")
+
+    # Display the plot
+    plt.show()
 
 # Main function for evaluation
 if __name__ == "__main__":

@@ -3,7 +3,7 @@ def is_prime(n):
     Function to check if the given number is prime.
     Returns True if n is prime, otherwise False.
     """
-    pass  # TODO: Implement this function
+    return n > 1 and all(n % i != 0 for i in range(2, int(n ** 0.5) + 1))
 
 # Main function for evaluation
 if __name__ == "__main__":

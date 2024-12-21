@@ -13,7 +13,16 @@ def create_and_filter_dataframe(data):
     Returns:
     - Filtered DataFrame with rows where Passed is True.
     """
-    pass  # TODO: Implement this function
+    # Create DataFrame from input data
+    df = pd.DataFrame(data)
+    
+    # Add new column Passed where Marks > 50
+    df['Passed'] = df['Marks'] > 50
+    
+    # Filter rows where Passed is True
+    filtered_df = df[df['Passed']]
+    
+    return filtered_df
 
 # Main function for evaluation
 if __name__ == "__main__":

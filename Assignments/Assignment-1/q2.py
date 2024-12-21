@@ -2,13 +2,13 @@ def reverse_string(s):
     """
     Function to reverse the given string.
     """
-    pass  # TODO: Implement this function
+    return s[::-1]
 
 def count_characters(s):
     """
     Function to count the number of characters in the given string.
     """
-    pass  # TODO: Implement this function
+    return len(s)
 
 # Main function for evaluation
 if __name__ == "__main__":

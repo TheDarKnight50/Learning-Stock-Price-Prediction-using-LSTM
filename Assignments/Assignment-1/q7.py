@@ -13,7 +13,16 @@ def process_csv(file_path):
     Returns:
     - A tuple: (filtered DataFrame, average Rainfall)
     """
-    pass  # TODO: Implement this function
+    # Load CSV file into a DataFrame
+    df = pd.read_csv(file_path)
+    
+    # Filter rows where Temperature > 30
+    filtered_df = df[df['Temperature'] > 30]
+    
+    # Calculate average Rainfall
+    avg_rainfall = filtered_df['Rainfall'].mean()
+    
+    return filtered_df, avg_rainfall
 
 # Main function for evaluation
 if __name__ == "__main__":

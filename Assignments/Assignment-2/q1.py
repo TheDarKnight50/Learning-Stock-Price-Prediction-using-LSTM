@@ -18,9 +18,7 @@ def mean_squared_error(y_true, y_pred):
     Returns:
     float: MSE value
     """
-    # TODO: Implement the formula for MSE
-    pass
-
+    return np.mean((y_true - y_pred) ** 2)
 
 def compute_gradient(X, y, weights):
     """
@@ -34,8 +32,10 @@ def compute_gradient(X, y, weights):
     Returns:
     numpy array: Gradient vector
     """
-    # TODO: Implement the gradient computation
-    pass
+    predictions = np.dot(X, weights)
+    error = predictions - y
+    gradient = 2 * np.dot(X.T, error) / X.shape[0]
+    return gradient
 
 
 def train_linear_regression(X, y, learning_rate, epochs):
@@ -51,8 +51,18 @@ def train_linear_regression(X, y, learning_rate, epochs):
     Returns:
     numpy array: Final weights
     """
-    # TODO: Initialize weights, iterate over epochs, and update weights
-    pass
+    # Initialize weights randomly
+    weights = np.random.randn(X.shape[1])
+    
+    # Gradient descent
+    for _ in range(epochs):
+        # Compute gradient
+        gradient = compute_gradient(X, y, weights)
+        
+        # Update weights
+        weights = weights - learning_rate * gradient
+        
+    return weights
 
 
 def predict(X, weights):
@@ -66,8 +76,7 @@ def predict(X, weights):
     Returns:
     numpy array: Predicted target values
     """
-    # TODO: Implement the prediction logic
-    pass
+    return np.dot(X, weights)
 
 
 def generate_data(m, c, num_samples, noise_level):

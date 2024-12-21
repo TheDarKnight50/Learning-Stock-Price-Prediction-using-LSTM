@@ -18,7 +18,7 @@ def sigmoid(z):
     numpy array: Sigmoid of input z
     """
     # TODO: Implement sigmoid function
-    pass
+    return 1 / (1 + np.exp(-z))
 
 
 def binary_cross_entropy(y_true, y_pred):
@@ -33,7 +33,7 @@ def binary_cross_entropy(y_true, y_pred):
     float: Binary cross-entropy loss
     """
     # TODO: Implement the formula for binary cross-entropy loss
-    pass
+    return -np.mean(y_true * np.log(y_pred) + (1 - y_true) * np.log(1 - y_pred))
 
 
 def compute_gradient(X, y, weights):
@@ -49,7 +49,10 @@ def compute_gradient(X, y, weights):
     numpy array: Gradient vector
     """
     # TODO: Implement the gradient computation
-    pass
+    predictions = sigmoid(X @ weights)
+    error = predictions - y
+    gradient = np.dot(X.T, error) / X.shape[0]
+    return gradient
 
 
 def train_logistic_regression(X, y, learning_rate, epochs):
@@ -65,8 +68,18 @@ def train_logistic_regression(X, y, learning_rate, epochs):
     Returns:
     numpy array: Final weights
     """
-    # TODO: Initialize weights, iterate over epochs, and update weights
-    pass
+    # Initialize weights randomly
+    weights = np.random.randn(X.shape[1])
+    
+    # Gradient descent
+    for _ in range(epochs):
+        # Compute gradient
+        gradient = compute_gradient(X, y, weights)
+        
+        # Update weights
+        weights = weights - learning_rate * gradient
+        
+    return weights
 
 
 def predict(X, weights, threshold=0.5):
@@ -81,8 +94,13 @@ def predict(X, weights, threshold=0.5):
     Returns:
     numpy array: Predicted class labels (0 or 1)
     """
-    # TODO: Implement the prediction logic
-    pass
+    # Compute predicted probabilities
+    probabilities = sigmoid(X @ weights)
+    
+    # Apply threshold to classify as 0 or 1
+    predictions = (probabilities >= threshold).astype(int)
+    
+    return predictions
 
 
 def generate_data(num_samples, noise_level):

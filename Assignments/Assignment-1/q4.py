@@ -5,7 +5,12 @@ def modify_array(arr):
     Function to replace all odd numbers in the array with -1.
     Returns the modified array.
     """
-    pass  # TODO: Implement this function
+    # Loop through the array and replace odd numbers with -1
+    for i in range(len(arr)):
+        if arr[i] % 2 == 1:
+            arr[i] = -1
+
+    return arr
 
 # Main function for evaluation
 if __name__ == "__main__":

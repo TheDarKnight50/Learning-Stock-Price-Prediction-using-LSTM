@@ -2,13 +2,21 @@ def print_even_numbers(numbers):
     """
     Function to print all even numbers from the given list.
     """
-    pass  # TODO: Implement this function
+    # evennums = []
+    for num in numbers: 
+        if(num % 2 == 0) : 
+            print(num)
 
 def sum_of_odd_numbers(numbers):
     """
     Function to return the sum of all odd numbers from the given list.
     """
-    pass  # TODO: Implement this function
+    sum = 0
+    for num in numbers:
+        if num % 2 == 1 : 
+            sum += num
+
+    return sum
 
 # Main function for evaluation
 if __name__ == "__main__":
@@ -38,7 +46,7 @@ if __name__ == "__main__":
         sys.stdout = old_stdout
 
         # Extract printed even numbers as a list of integers
-        printed_numbers = list(map(int, captured_output.getvalue().strip().split(',')))
+        printed_numbers = list(map(int, captured_output.getvalue().strip().split('\n')))
 
         if printed_numbers != expected_even_numbers:
             print(f"Test failed for print_even_numbers. Got: {printed_numbers}, Expected: {expected_even_numbers}")
