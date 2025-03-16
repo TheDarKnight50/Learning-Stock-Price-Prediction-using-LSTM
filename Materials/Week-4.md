@@ -12,4 +12,4 @@ You will have a good grasp of RNN and LSTM from this playlist for your final pro
 
 [![Lecture Series](https://img.youtube.com/vi/Y2wfIKQyd1I/hqdefault.jpg)](https://youtu.be/Y2wfIKQyd1I?si=VhYRW7E1Mzv2xzd1)
 
-**All The Best Guys!!**
+**All The Best Everyone!!**
